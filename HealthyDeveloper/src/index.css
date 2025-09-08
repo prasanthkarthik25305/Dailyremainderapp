@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Developer Productivity & Health Scheduler Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core Theme - Dark Mode First */
+    --background: 240 10% 3.9%;
+    --background-subtle: 240 6% 6%;
+    --foreground: 0 0% 98%;
+    --foreground-muted: 240 5% 84%;
+
+    /* Cards & Surfaces */
+    --card: 240 7% 8%;
+    --card-hover: 240 7% 10%;
+    --card-foreground: 0 0% 98%;
+
+    /* Interactive Elements */
+    --popover: 240 7% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Brand Colors - Tech Purple/Blue */
+    --primary: 250 84% 63%;
+    --primary-glow: 250 100% 70%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Success & Health - Vibrant Green */
+    --success: 142 76% 36%;
+    --success-glow: 142 76% 50%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning & Focus - Amber */
+    --warning: 43 96% 56%;
+    --warning-glow: 43 96% 65%;
+    --warning-foreground: 20 14.3% 4.1%;
+
+    /* Accent - Cyan for highlights */
+    --accent: 189 100% 56%;
+    --accent-glow: 189 100% 65%;
+    --accent-foreground: 240 10% 3.9%;
+
+    /* Neutral States */
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 64%;
+
+    /* States */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders & Inputs */
+    --border: 240 6% 20%;
+    --border-subtle: 240 6% 15%;
+    --input: 240 6% 10%;
+    --ring: 250 84% 63%;
+
+    /* Design System Enhancements */
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-warning: linear-gradient(135deg, hsl(var(--warning)), hsl(var(--warning-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--background-subtle)));
+
+    /* Shadows & Effects */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--primary) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-success: 0 0 20px hsl(var(--success) / 0.3);
+
+    /* Animations */
+    --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+    --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Inter',sans-serif];
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+}
+
+@layer components {
+  /* Utility classes for our design system */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-warning {
+    background: var(--gradient-warning);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-success {
+    box-shadow: var(--shadow-success);
+  }
+
+  .transition-all {
+    transition: var(--transition-all);
+  }
+
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+
+  .animate-pulse-custom {
+    animation: var(--animation-pulse);
+  }
+}
